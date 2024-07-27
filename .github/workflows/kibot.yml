@@ -28,9 +28,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: run kibot
         run: | 
-          cd ${{env.project_dir}}
+          cd "${{env.project_dir}}"
           mkdir ${{env.out_dir}}
-          kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.out_dir}} -v
+          kibot -c kibot.yml -e "${{env.schema}}" -b "${{env.board}}" -d ${{env.out_dir}} -v
       - uses: actions/upload-artifact@v4
         if: ${{success()}}
         with:
