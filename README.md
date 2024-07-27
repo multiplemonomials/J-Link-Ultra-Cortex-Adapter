@@ -14,7 +14,7 @@ First of all, this adapter uses proper keyed connectors for each of the ARM Cort
 
 (note: the ARM standard says that the connections should be keyed via a missing pin 7 on the header and a filled pin 7 hole in the cable.  However, I've had a hard time sourcing this, so I've gone for the next best thing.  Plus, this way if you replace the cable the connector will still be keyed.)
 
-Additionally, this adapter gives you not one, not two, but *three* different connection options:
+Additionally, with this adapter, you get not one, not two, but *three* different connection options:
 - Standard 9-pin Cortex Debug
 - STMicro 14-pin STDC14
 - Standard 19-pin Cortex Debug
@@ -25,8 +25,8 @@ Last but not least, the Ultra Cortex Adapter gives you access to all of the JTAG
 
 - Q: Why are there so many GND lines on the connectors?
   - A: This is to create some level of electrical isolation between the JTAG lines by putting a GND conductor between each of the signal lines on the ribbon cable.
-- Q: How to protect JTAG/SWD pins so that random electrical noise doesn't cause something to happen on the JTAG port of the MCU?
-  - A: If your MCU has a TRST pin, one of the easiest ways to do this is to connect it to the debugger pull the TRST pin to ground with a weak pulldown (10k?).  This ensures the JTAG TAP is held in reset at all times, except when a debugger is plugged in and brings TRST high.  However, TRST is not mapped on the standard ARM Cortex debug connectors.  SEGGER's adapters offer the option to convert the GNDDetect line into TRST, and that is supported by this adapter, but it might break compatibility with other standard-compliant debuggers.
+- Q: How do I protect JTAG/SWD pins on my board so that random electrical noise doesn't cause something to happen on the JTAG port of the MCU?
+  - A: If your MCU has a TRST pin, one of the easiest ways to do this is to connect it to the debug connector and then pull the TRST pin to ground with a weak pulldown (10k?).  This ensures the JTAG TAP is held in reset at all times, except when a debugger is plugged in and brings TRST high.  However, TRST is not mapped on the standard ARM Cortex debug connectors.  SEGGER's adapters offer the option to convert the GNDDetect line into TRST, and that is supported by this adapter, but it might break compatibility with other standard-compliant debuggers.
   - If you don't have TRST, the [ARM recommended method](https://developer.arm.com/documentation/101416/0100/Hardware-Description/Target-Interfaces/Cortex-Debug-ETM) is to use 100kOhm resistors to pull up TMS and TDI to logic high and pull down TCLK to logic low.
 - Q: What's the deal with the GNDDetect pin?
   - A: It's not documented well, but as far as I can understand, the idea of this pin is that it's pulled high on the board side and grounded on the debugger side.  This allows the board to know if a debugger is plugged in or not.  Unfortunately, SEGGER slightly disrupted this by leaving GNDDetect as NC by default, with a solder bridge option to connect it to TRST or GND.

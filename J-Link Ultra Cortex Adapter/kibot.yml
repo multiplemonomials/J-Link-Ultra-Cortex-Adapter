@@ -1,0 +1,37 @@
+kibot:
+  version: 1
+
+preflight:
+  set_text_variables:
+    - name: "date"
+      command: git log -1 --format="%as"
+    - name: "version"
+      command: git describe --exact-match --tags 2> /dev/null || git rev-parse --short HEAD
+  update_xml: true
+  run_erc: true
+  # TODO change back to true
+  run_drc: false
+  check_zone_fills: true
+  ignore_unconnected: false
+
+filters:
+  - name: "exclude_any"
+    type: "generic"
+    comment: "Exclude logos, testpoints, fiducials and power"
+    exclude_any:
+      - column: Reference
+        regex: "^(G|#|TP|F).*"
+
+import:
+# docs 
+  - file: .kibot/bom_ibom.kibot.yml
+  - file: .kibot/bom_pcbinv.kibot.yml
+  - file: .kibot/docs.kibot.yml
+# fabrications
+  - file: .kibot/PCBWay.kibot.yml
+# img
+  - file: .kibot/render.kibot.yml
+  - file: .kibot/plot.kibot.yml
+# cad
+  - file: .kibot/boardview.kibot.yml
+  - file: .kibot/step.kibot.yml

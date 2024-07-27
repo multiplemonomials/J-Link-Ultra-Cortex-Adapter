@@ -1,0 +1,9 @@
+outputs:
+  - name: 'PCB STEP'
+    comment: 'Generate 3D model (STEP) of PCB and components'
+    type: step
+    dir: cad
+    options:
+      metric_units: true
+      download: true
+      output: '%f.%x'

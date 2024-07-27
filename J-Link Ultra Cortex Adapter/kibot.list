@@ -1,0 +1,1 @@
+deb [signed-by=/etc/apt/kibot.gpg] https://set-soft.github.io/debian/ bullseye main

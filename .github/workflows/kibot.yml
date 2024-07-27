@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2022 nerdyscout <https://github.com/nerdyscout/>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+name: KiBot
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+    - "J-Link Ultra Cortex Adapter/*.kicad_sch"
+    - "J-Link Ultra Cortex Adapter/*.kicad_pcb"
+    - "J-Link Ultra Cortex Adapter/*.kicad_pro"
+    - "**/*kibot.yml"
+
+env:
+  schema: "J-Link Ultra Cortex Adapter.kicad_sch"
+  board: "J-Link Ultra Cortex Adapter.kicad_pcb"
+  project_dir: "J-Link Ultra Cortex Adapter"
+  out_dir: out
+
+jobs:
+  compile-and-gen-design-files:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/inti-cmnb/kicad8_auto:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: run kibot
+        run: | 
+          cd ${{env.project_dir}}
+          mkdir ${{env.out_dir}}
+          kibot -c kibot.yml -e ${{env.schema}} -b ${{env.board}} -d ${{env.out_dir}} -v
+      - uses: actions/upload-artifact@v4
+        if: ${{success()}}
+        with:
+          name: ${{github.event.repository.name}}_design_files
+          if-no-files-found: error
+          path: |
+            ${{env.project_dir}}/${{env.out_dir}}/**
+            !${{env.project_dir}}/${{env.out_dir}}/**/*.ogv
+            !${{env.project_dir}}/${{env.out_dir}}/**/*.log

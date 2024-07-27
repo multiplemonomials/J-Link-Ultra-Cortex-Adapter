@@ -2595,6 +2595,102 @@
 				)
 			)
 		)
+		(symbol "power:PWR_FLAG"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 	)
 	(junction
 		(at 53.34 82.55)
@@ -2607,6 +2703,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1ff8b3d4-4e27-4326-bd63-162fbb20cc52")
+	)
+	(junction
+		(at 240.03 67.31)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "24db1f9d-22e9-4204-a4b8-18e3f77e1ff2")
 	)
 	(junction
 		(at 45.72 125.73)
@@ -2667,6 +2769,10 @@
 		(uuid "0035a4bb-3a8f-4418-9de9-cc74565ee7cb")
 	)
 	(no_connect
+		(at 82.55 118.11)
+		(uuid "42f518f0-9941-402e-b422-94c6cce0b086")
+	)
+	(no_connect
 		(at 224.79 87.63)
 		(uuid "7234428b-eb4e-485a-84e9-6f1d8f688eca")
 	)
@@ -2677,6 +2783,10 @@
 	(no_connect
 		(at 224.79 85.09)
 		(uuid "7c91d292-bfe8-4394-a415-186bdb0151e0")
+	)
+	(no_connect
+		(at 69.85 118.11)
+		(uuid "7d8a3914-518d-4110-bf68-cd4bf6b904e2")
 	)
 	(no_connect
 		(at 224.79 64.77)
@@ -3054,7 +3164,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 67.31) (xy 242.57 67.31)
+			(xy 224.79 67.31) (xy 240.03 67.31)
 		)
 		(stroke
 			(width 0)
@@ -3241,6 +3351,16 @@
 			(type default)
 		)
 		(uuid "d47aa38c-c836-4051-88fe-9025b0151841")
+	)
+	(wire
+		(pts
+			(xy 240.03 67.31) (xy 242.57 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d860f78d-9c00-4794-b6b0-2f4ce8fb0ef8")
 	)
 	(wire
 		(pts
@@ -4468,6 +4588,72 @@
 			(project "J-Link Ultra Cortex Adapter"
 				(path "/a2b7d128-6e6f-4c7e-8880-feb4cf4d8b53"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 240.03 67.31 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "27a0b625-753c-4e1c-a678-fe18614b9196")
+		(property "Reference" "#FLG01"
+			(at 240.03 65.405 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 240.03 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 240.03 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 240.03 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 240.03 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bf360c5a-b07b-4352-97c8-63f1575bc3c1")
+		)
+		(instances
+			(project "J-Link Ultra Cortex Adapter"
+				(path "/a2b7d128-6e6f-4c7e-8880-feb4cf4d8b53"
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)

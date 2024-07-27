@@ -1,0 +1,37 @@
+outputs:
+  - name: 'pcbinv BoM'
+    comment: 'CSV bill of materials for pcbinv'
+    type: 'bom'
+    #  [string='./'] Output directory for the generated files. If it starts with + the rest is concatenated to the default dir.
+    dir: 'docs/bom'
+    options:
+      # [string=''] [HTML,CSV,TXT,TSV,XML,XLSX,HRTXT] format for the BoM. Defaults to CSV or a guess according to the options. HRTXT stands for Human Readable TeXT.
+      format: CSV
+      # [list(dict)|list(string)] List of columns to display.
+      # Can be just the name of the field
+      columns:
+        # [string=''] Name of the field to use for this column
+        # field: ''
+        # [list(string)|string=''] List of fields to join to this column
+        # join: ''
+        # [string=''] Name to display in the header. The field is used when empty
+        # name: ''
+        - References
+        - Description
+        - Part
+        - Value
+        - Supplier
+        - SKU
+        - Footprint
+        - LibRef
+        - field: Quantity Per PCB
+          name: Qty
+
+      # [dict] Options for the CSV, TXT and TSV formats.
+      csv:
+        # [boolean=false] Hide statistics information.
+        hide_stats_info: true
+        # [boolean=false] Hide project information.
+        hide_pcb_info: true
+      # [string='%f-%i%v.%x'] filename for the output (%i=bom). Affected by global options
+      output: '%f-%i-pcbinv.%x'

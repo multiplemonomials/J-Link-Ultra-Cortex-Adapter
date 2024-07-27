@@ -30,4 +30,4 @@ fp-info-cache
 *.csv
 
 # KiBot outputs
-kicad_project/out
+J-Link Ultra Cortex Adapter/out
