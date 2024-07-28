@@ -387,5 +387,8 @@
       "Root"
     ]
   ],
-  "text_variables": {}
+  "text_variables": {
+    "date": "2024-07-27",
+    "version": "debe872"
+  }
 }
