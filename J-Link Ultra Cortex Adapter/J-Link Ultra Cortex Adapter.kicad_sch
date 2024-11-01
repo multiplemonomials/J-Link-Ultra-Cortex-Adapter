@@ -2499,6 +2499,85 @@
 				)
 			)
 		)
+		(symbol "ProjectLibrary:StencilAlignmentHole"
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "2.6mm"
+				(at 0 -2.286 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ProjectLibrary:StencilAlignmentHole"
+				(at 0.508 -4.572 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "StencilAlignmentHole_1_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 0.6)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -2721,6 +2800,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5330d4f7-de4b-4918-bc20-efc364c8f25d")
+	)
+	(junction
+		(at 229.87 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "72834f06-5d8a-4a4c-af07-1381cfb82e90")
 	)
 	(junction
 		(at 242.57 69.85)
@@ -3041,6 +3126,16 @@
 			(type default)
 		)
 		(uuid "64cb8dfc-aebf-4c3b-bc93-e54341266e4e")
+	)
+	(wire
+		(pts
+			(xy 229.87 152.4) (xy 229.87 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67da434f-57b9-4eee-9ec7-c13695c87b51")
 	)
 	(wire
 		(pts
@@ -3391,6 +3486,16 @@
 			(type default)
 		)
 		(uuid "f004cceb-25c0-48f5-a3ab-181da379ce09")
+	)
+	(wire
+		(pts
+			(xy 229.87 147.32) (xy 229.87 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f02f4e70-8a86-49e4-b44b-9e587697a427")
 	)
 	(wire
 		(pts
@@ -5023,6 +5128,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 229.87 156.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "62f075e7-9139-46b6-a7e9-d6be8d7f624c")
+		(property "Reference" "#PWR05"
+			(at 229.87 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 229.87 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 229.87 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 229.87 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 229.87 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "410fd135-d03b-4a0f-bc09-31d490ebc211")
+		)
+		(instances
+			(project "J-Link Ultra Cortex Adapter"
+				(path "/a2b7d128-6e6f-4c7e-8880-feb4cf4d8b53"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 45.72 135.89 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5342,6 +5513,140 @@
 			(project "J-Link Ultra Cortex Adapter"
 				(path "/a2b7d128-6e6f-4c7e-8880-feb4cf4d8b53"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProjectLibrary:StencilAlignmentHole")
+		(at 233.68 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "af802335-309c-43e3-af6c-2f647961df26")
+		(property "Reference" "H1"
+			(at 236.22 146.0499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.6mm"
+			(at 236.22 148.5899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ProjectLibrary:StencilAlignmentHole"
+			(at 234.188 151.892 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 233.68 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9df1bc80-347b-4ab5-9971-66cf9ebaeb5e")
+		)
+		(instances
+			(project ""
+				(path "/a2b7d128-6e6f-4c7e-8880-feb4cf4d8b53"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ProjectLibrary:StencilAlignmentHole")
+		(at 233.68 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c1e75333-a413-4f28-92a6-7fe2b0655029")
+		(property "Reference" "H2"
+			(at 236.22 151.1299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.6mm"
+			(at 236.22 153.6699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ProjectLibrary:StencilAlignmentHole"
+			(at 234.188 156.972 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 233.68 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "292d5420-ab25-4746-a76e-0624c9b9a5fc")
+		)
+		(instances
+			(project ""
+				(path "/a2b7d128-6e6f-4c7e-8880-feb4cf4d8b53"
+					(reference "H2")
 					(unit 1)
 				)
 			)
