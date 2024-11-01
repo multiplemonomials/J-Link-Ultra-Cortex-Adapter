@@ -32,6 +32,10 @@ Last but not least, the Ultra Cortex Adapter gives you access to all of the JTAG
   - A: It's not documented well, but as far as I can understand, the idea of this pin is that it's pulled high on the board side and grounded on the debugger side.  This allows the board to know if a debugger is plugged in or not.  Unfortunately, SEGGER slightly disrupted this by leaving GNDDetect as NC by default, with a solder bridge option to connect it to TRST or GND.
 - Q: How do we get Virtual COM Port on the 19-pin connector?
   - A: Unfortunately, even with 19 pins available, ARM didn't define a standard way to add UART to this connector.  Sadness.  And with SEGGER's default mapping (VCP_TX = TDI, VCP_RX = DBGREQ), the VCP_RX pin doesn't make it to *any* pin on the 19-pin connector.  To work around this, this adapter defines a custom mapping of VCP_RX to pin 7, the normally unused key pin on the connector.  This mapping is enabled by default, but can be disabled via cutting a jumper if you are using pin 7 for something else on your board.
+- Q: How do I know if my J-Link supports Virtual COM Port?
+  - A: This information is on the [SEGGER Wiki](https://wiki.segger.com/J-Link_Model_Overview), just click your J-Link model, find the Hardware Features table, and look for "VCOM".
+- Q: How fast can the J-Link VCP port go?
+  - A: Annoyingly, at the time of this writing, the J-Link serial port maxes out at 115200 baud on most J-Link probes.  Only the ULTRA V5 and ULTRA V6 support higher baudrates (up to 10Mbaud).  Here's hoping that SEGGER decides to get into the 21st century and add faster speeds on their standard models of debug probe...
 
 ## Choosing a Debug Connector for Your Board
 
